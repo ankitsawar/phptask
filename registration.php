@@ -9,10 +9,10 @@
 
       }	
   
-
      include_once "data.php";
+
     $sql = "select email from users where email='$email'";
-     $result = mysqli_query($conn,$sql);
+      $result = mysqli_query($conn,$sql);
     if (mysqli_num_rows($result) > 1 )
     {
     		echo "email should be unique";
