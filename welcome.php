@@ -107,7 +107,7 @@ session_start();
 					<img src="images/boy-image.png" alt="male avtar" class="rounded-circle" width="300px" height="300px">
 				}
 				else {
-				<img src="images/girl-image.jpg" alt="female avtar" class="rounded-circle" width="300px" height="300px">
+				<img src="images/girl-image.jpgs" alt="female avtar" class="rounded-circle" width="300px" height="300px">
 			}
 			</div>
 			<div class="col-md-5 col-lg-5 col-xl-5">
