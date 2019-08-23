@@ -9,6 +9,7 @@ include "data.php";
 
 $query = "select * from users";
 $sql = mysqli_query($conn,$query);
+
  
 ?>
 
@@ -20,6 +21,8 @@ $sql = mysqli_query($conn,$query);
 		<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	    <script src="jquery.min.js"></script>
 		<script src="bootstrap.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 		<style type="text/css">
 			.tab_sty {
 				width: 100%;
@@ -51,7 +54,7 @@ $sql = mysqli_query($conn,$query);
 		<td><?php echo($row['created_at']); ?></td>
 		<td><?php echo($row['mobile']); ?></td>
 		<td><?php echo($row['gender']); ?></td>
-		<td><a href="update.php?id=<?php echo($row['id']); ?>">edit</a> <a dataId="<?php echo($row['id']); ?>">delete</a> </td>
+		<td><a href="update.php?id=<?php echo($row['id']); ?>"><i class="fa fa-pencil pl-3" aria-hidden="true"></i></a> <a dataId="<?php echo($row['id']); ?>"><i class="fa fa-trash pl-5" aria-hidden="true"></i></a> </td>
 	</tr> <?php
 		 										} 
 		  ?>
