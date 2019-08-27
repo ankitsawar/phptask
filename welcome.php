@@ -104,23 +104,38 @@ session_start();
 		<div class="row">
 			<div class="col-md-7 col-lg-7 col-xl-7">
 				<?php
-
+					$pic = $row['picture'];
 				if($row['gender'] == 'male')
-				{
+				{ 
 
-				?>
-					<img src="images/boy-image.png" alt="male avtar" class="rounded-circle" width="300px" height="300px">
+				
+				   if($pic === NULL) { 
+				    	echo'<img src="images/boy-image.png" alt="male avtar" class="rounded-circle" width="300px" height="300px">';
+				     }
+				    
+				      else {  
+				    	echo'<img src="'.$row['picture'].'" alt="male avtar" class="rounded-circle" width="300px" height="300px">';
+				    } 
+					
 
-					<?php
-				}
+				
+				} 
+				
  
+					
+				   else {
 
-				else {
+				
 
-					?>
-
-				<img src="images/girl-image.jpgs" alt="female avtar" class="rounded-circle" width="300px" height="300px">
-					<?php	
+					if($pic === NULL) { 
+					echo'<img src="images/girl-image.jpgs" alt="female avtar" class="rounded-circle" width="300px" height="300px">';
+				 } 
+				
+					 
+					else { 
+							echo '<img src="'.$row['picture'].'" alt="female avtar" class="rounded-circle" width="300px" height="300px">';
+					 } 
+					
 
 					} 
 					
