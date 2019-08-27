@@ -9,10 +9,8 @@ include "data.php";
 
 $query = "select * from users";
 $sql = mysqli_query($conn,$query);
-
  
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -39,7 +37,7 @@ $sql = mysqli_query($conn,$query);
 	<th>id</th>
 	<th>username</th>
 	<th>email</th>
-	<th>created_at</th>
+	<th>dob</th>
 	<th>Number</th>
 	<th>gender</th>
 	<th>actions</th>
@@ -51,15 +49,44 @@ $sql = mysqli_query($conn,$query);
 		<td><?php echo($row['id']); ?></td>
 		<td><?php echo($row['username']); ?></td>
 		<td><?php echo($row['email']); ?></td>
-		<td><?php echo($row['created_at']); ?></td>
+		<td><?php echo(date('d F, Y',strtotime($row['dob']))); ?></td>
 		<td><?php echo($row['mobile']); ?></td>
 		<td><?php echo($row['gender']); ?></td>
-		<td><a href="update.php?id=<?php echo($row['id']); ?>"><i class="fa fa-pencil pl-3" aria-hidden="true"></i></a> <a dataId="<?php echo($row['id']); ?>"><i class="fa fa-trash pl-5" aria-hidden="true"></i></a> </td>
+		<td><a href="update.php?id=<?php echo($row['id']); ?>"><i class="fa fa-pencil pl-3" aria-hidden="true"></i></a> <a onclick="deleteFunc(<?php echo $row['id']; ?>)"><i class="fa fa-trash pl-5" aria-hidden="true"></i></a> </td>
 	</tr> <?php
 		 										} 
 		  ?>
 	
 
 </table>
+<script>
+	function deleteFunc(id) {	
+		if(confirm('are you sure you want to delete?') ) {
+			console.log(id);
+			$.ajax({
+				type: 'post',
+				url: 'delete.php',
+				data: {id:id},
+				dataType: 'json',
+				success: function(data) {
+					console.log(data);
+					if(data.message == 'success') {
+						window.location.href = 'edit.php';
+
+					}
+					else
+					{
+						alert ("something went wrong");
+					}
+				}
+			});
+		}
+	}    
+</script>
+
+
 </body>
 </html>
+
+
+
