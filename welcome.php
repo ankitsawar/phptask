@@ -8,6 +8,8 @@ session_start();
 	$query = "select * from users where email = '$email'";
 	// echo $query;
 	$sql = mysqli_query($conn,$query);
+	// print_r($sql);
+	// die();
 	$row = mysqli_fetch_assoc($sql);
 	// echo "<pre>";
 	// print_r($row);
@@ -84,7 +86,7 @@ session_start();
 
 	<nav class="navbar navbar-expand-sm bg-dark">
 		<ul class="navbar-nav">
-			<li class="nav-item"><a href="" class="nav-link edt_sty">edit</a></li>
+			<li class="nav-item"><a href="edit.php" class="nav-link edt_sty">edit</a></li>
 			<li><a href="logout.php" class="nav-link edt_sty">logout</a></li>
 		</ul>
 	</nav>
@@ -101,14 +103,43 @@ session_start();
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7 col-lg-7 col-xl-7">
+				<?php
+					$pic = $row['picture'];
+				if($row['gender'] == 'male')
+				{ 
+
 				
-				if($_row['gender'] == 'male')
-				{
-					<img src="images/boy-image.png" alt="male avtar" class="rounded-circle" width="300px" height="300px">
-				}
-				else {
-				<img src="images/girl-image.jpgs" alt="female avtar" class="rounded-circle" width="300px" height="300px">
-			}
+				   if($pic === NULL) { 
+				    	echo'<img src="images/boy-image.png" alt="male avtar" class="rounded-circle" width="300px" height="300px">';
+				     }
+				    
+				      else {  
+				    	echo'<img src="'.$row['picture'].'" alt="male avtar" class="rounded-circle" width="300px" height="300px">';
+				    } 
+					
+
+				
+				} 
+				
+ 
+					
+				   else {
+
+				
+
+					if($pic === NULL) { 
+					echo'<img src="images/girl-image.jpgs" alt="female avtar" class="rounded-circle" width="300px" height="300px">';
+				 } 
+				
+					 
+					else { 
+							echo '<img src="'.$row['picture'].'" alt="female avtar" class="rounded-circle" width="300px" height="300px">';
+					 } 
+					
+
+					} 
+					
+					?>	
 			</div>
 			<div class="col-md-5 col-lg-5 col-xl-5">
 				<div class="user_info">
