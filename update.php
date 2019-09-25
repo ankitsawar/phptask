@@ -1,10 +1,18 @@
 <?php 
-$id = ($_GET['id']);
+// $id = ($_GET['id']);
 
-include "data.php";
-$query = "select * from users where id='$id'";
- $sql = mysqli_query($conn,$query);
- 	$row = mysqli_fetch_assoc($sql);
+// include "data.php";
+// $query = "select * from users where id='$id'";
+//  $sql = mysqli_query($conn,$query);
+//  	$row = mysqli_fetch_assoc($sql);
+
+$row = array(
+    "username" => "Ankit",
+    "email" => "ankit@gmail.com",
+    "mobile" => "8691950839",
+    "dob" => "",
+    "gender" => "female"
+);
  
 
 ?>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body {
+			font-family: 'Open Sans', sans-serif;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+		}
+		.h_100 {
+			height: 100%;
+		}
+		._assignment_3 {
+			width: 80%;
+			margin: 0 auto;
+			padding: 12% 0;
+		}
+		._two_forms_wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		._form_1, ._form_2 {
+			width: 50%;
+			padding: 20px 30px;
+		}
+		._form_2 {
+			border-left: 1px solid #007aa1;
+		}
+		._form_1 {
+			text-align: right;
+		}
+		._input_wrap {
+			margin-bottom: 10px;
+		}
+		._input_wrap .label {
+			width: 150px;
+			display: inline-block;
+			font-size: 14px;
+			margin-right: 10px;	
+		}
+		._input_wrap input {
+			padding: 5px 5px;
+			border-radius: 4px;
+			border:solid 1px rgba( 70, 69, 71, 0.3 );
+			font-family: 'Open Sans', sans-serif;
+			font-size: 12px;
+		}
+		._input_wrap input:focus {
+			border-color: #007aa1 !important;
+			box-shadow: none;
+			outline: 0;
+		}
+		._submit_btn_wrap {
+			margin: 30px 0 0 0;
+		}
+		._form_2 ._submit_btn_wrap {
+			text-align: center;
+		}
+		._submit_btn, ._submit_btn:hover, ._submit_btn:focus {
+			outline: 0;
+			padding: 5px 10px;
+			font-size: 14px;
+			font-weight: 600;
+			border:solid 1px rgba( 70, 69, 71, 0.5 );
+			font-family: 'Open Sans', sans-serif;
+			letter-spacing: 1px;
+			background: #fff;
+			border-radius: 4px;
+			cursor: pointer;
+			color: rgba( 70, 69, 71, 1 );
+		}
+		._submit_btn:hover{
+			border-color: #007aa1 !important;
+			color: #007aa1 !important;
+		}
+		.radio_label {
+			font-size: 13px;
+			font-weight: 400;
+		}
+		._input_select, ._input_select:focus {
+			outline: 0;
+			padding: 5px 8px;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 14px;
+			border-radius: 4px;
+			border:solid 1px rgba( 70, 69, 71, 0.5 );
+		}
+	</style>
+</head>
+<body>
+	<section class="_assignment_3 h_100">
+		<div class="_two_forms_wrapper h_100">
+			<div class="_form_1 h_100">
+				<form method="post" action="" onsubmit="return _submit_form( 'Left' );">
+					<div class="_input_wrap">
+						<label for="email" class="label">Email:</label>
+						<input type="email" name="email" class="email">
+					</div>
+					<div class="_input_wrap">
+						<label for="username" class="label">Username:</label>
+						<input type="text" name="username" class="username">
+					</div>
+					<div class="_input_wrap">
+						<label for="password" class="label">Password:</label>
+						<input type="password" name="password" class="password">
+					</div>
+					<div class="_submit_btn_wrap text-center">
+						<button type="submit" class="_submit_btn">Submit</button>
+					</div>
+				</form>
+			</div>
+			<div class="_form_2">
+				<form method="post" action="" onsubmit="return _submit_form( 'Right' );">
+					<div class="_input_wrap">
+						<label for="first-name" class="label">First Name:</label>
+						<input type="text" name="firstname" class="firstname">
+					</div>
+					<div class="_input_wrap">
+						<label for="last-name" class="label">Last Name:</label>
+						<input type="text" name="lastname" class="lastname">
+					</div>
+					<div class="_input_wrap">
+						<label for="birth-date" class="label">Birth Date:</label>
+						<input type="date" name="birthdate" class="birthdate">
+					</div>
+					<div class="_input_wrap">
+						<label for="city" class="label">City:</label>
+						<input type="text" name="city" class="city">
+					</div>
+					<div class="_input_wrap">
+						<label for="mobile-no" class="label">Mobile Number:</label>
+						<input type="number" name="mobile_number" class="mobile_number">
+					</div>
+					<div class="_input_wrap">
+						<label for="gender" class="label">Gender:</label>
+						<label class="radio_label"><input type="radio" name="gender" value="Male">Male</label>
+						<label class="radio_label"><input type="radio" name="gender" value="Female">Female</label>
+						<label class="radio_label"><input type="radio" name="gender" value="Other">Other</label>
+					</div>
+					<div class="_input_wrap">
+						<label for="employment-status" class="label">Employment Status:</label>
+						<select class="_input_select">
+							<option value="employed">Employed</option>
+							<option value="unemployed">Un Employed</option>
+						</select>
+					</div>
+					<div class="_submit_btn_wrap text-center">
+						<button type="submit" class="_submit_btn">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		function _submit_form( _which_form ) {
+			alert( _which_form+" Form Submitted" );
+		}
+	</script>
+</body>
+</html>

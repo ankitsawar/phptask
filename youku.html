@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id= "youkuplayer" style= "width:580px;height:326px" > </div>
+<div onclick="pauseVideo()">PauseVideo</div>
+<script type = "text/javascript" src = "//player.youku.com/jsapi" > </script >
+
+<script type = "text/javascript" >
+
+var player = new YKU. Player ( 'youkuplayer' ,{
+
+styleid: ' 0 ' ,
+
+client_id : '44503cca1be605b5' ,
+
+vid: 'XMTg3Nzg4MzY4NA' ,
+autoplay: true,
+
+newPlayer: true
+});
+
+function pauseVideo(){
+console.log(player);
+player.pauseVideo();
+
+}
+
+</script >
+</body>
+</html>
